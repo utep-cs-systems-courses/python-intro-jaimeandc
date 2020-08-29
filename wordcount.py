@@ -1,6 +1,7 @@
 #! /usc/bin/env python3
 import sys
 import os
+import re
 
 inputfile = sys.argv[1]
 outputfile = sys.argv[2]
@@ -24,6 +25,7 @@ if not os.path.exists(outputfile):
 for line in input_text:
     line = line.strip()
     line = line.lower()
+    line = re.sub(r'[^\w\s]','',line)
     words = line.split(" ")
 
     for word in words:
