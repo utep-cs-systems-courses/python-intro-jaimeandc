@@ -22,10 +22,11 @@ if not os.path.exists(inputfile):
 if not os.path.exists(outputfile):
     print("No Outputfile of that name exists")
     exit()
+
 for line in input_text:
     line = line.strip()
     line = line.lower()
-    line = re.sub(r'[^\w\s]','',line)
+    line = re.sub(r'[^\w\s]',' ',line)
     words = line.split(" ")
 
     for word in words:
